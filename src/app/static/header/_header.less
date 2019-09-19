@@ -1,0 +1,50 @@
+@header-top-font: 14px Montserrat, sans-serif;
+
+.header {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  &__top {
+    height: 100px;
+    background-color: #fff;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    font: @header-top-font;
+    padding-left: 390.5px;
+    @media screen and (max-width: 1000px) {
+      padding-left: 120px;
+    }
+    @media screen and (max-width: 500px) {
+      padding-left: 15px;
+    }
+    &-city {
+      color: #5286EC;
+      font: @header-top-font;
+      text-decoration: none;
+      display: none;
+      @media screen and (max-width: 360px) {
+        display: block;
+      }
+    }
+  }
+  &__telephone {
+    color: #b3b3b3;
+    margin-left: 36.11px;
+    @media screen and (max-width: 360px) {
+      display: none;
+    }
+    &-link {
+      color: #37373F;
+      text-decoration: none;
+    }
+  }
+  &__bottom {
+    width: 100%;
+    height: 840px;
+    background: url("../../img/helimain.png") no-repeat center center;
+    background-clip: border-box;
+  }
+}
