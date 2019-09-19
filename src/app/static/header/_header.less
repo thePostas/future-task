@@ -1,10 +1,12 @@
 @header-top-font: 14px Montserrat, sans-serif;
 
+//Хедер
 .header {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
+  //Верхняя часть хедера
   &__top {
     height: 100px;
     background-color: #fff;
@@ -14,16 +16,20 @@
     align-items: center;
     font: @header-top-font;
     padding-left: 390.5px;
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 992px) {
       padding-left: 120px;
     }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 768px) {
+      padding-left: 60px;
+    }
+    @media screen and (max-width: 640px) {
       padding-left: 15px;
     }
     @media screen and (max-width: 360px) {
       padding-right: 15px;
       height: 60px;
     }
+    //Пункт "город" (320px)
     &-city {
       padding-top: 5px;
       color: #5286EC;
@@ -38,6 +44,7 @@
       }
     }
   }
+  //Телефон
   &__telephone {
     color: #b3b3b3;
     margin-left: 36.11px;
@@ -49,30 +56,139 @@
       text-decoration: none;
     }
   }
+  //Кнопка логина
+  &__login {
+    display: none;
+    margin-left: auto;
+    @media screen and (max-width: 360px) {
+      display: block;
+    }
+  }
+  //Нижняя часть хедера
   &__bottom {
+    padding: 286px 0 0 392px;
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
     width: 100%;
     height: 840px;
-    background: url("../../img/helimain.png") no-repeat center center;
-    background-clip: border-box;
+    background: #dacbc4 url("../../img/helimain.png") no-repeat 0 center;
+    background-clip: padding-box;
+    @media screen and (max-width: 1400px) {
+      padding-left: 300px;
+    }
     @media screen and (max-width: 1200px) {
       background-position-x: -600px;
+      padding-left: 200px;
     }
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 992px) {
       background-position-x: -800px;
+    }
+    @media screen and (max-width: 768px) {
+      background-position-x: -800px;
+      padding: 142px 0 0 50px;
     }
     @media screen and (max-width: 600px) {
       background-position-x: -820px;
+    }
+    @media screen and (max-width: 480px) {
+      padding-left: 15px;
     }
     @media screen and (max-width: 320px) {
       background: url("../../img/helimain_small.png") center center;
       height: 655px;
     }
   }
-  &__login {
-    display: none;
-    margin-left: auto;
-    @media screen and (max-width: 360px) {
-    display: block;
+  //Заголовок нижней части хедера
+  &-title {
+    max-width: 847px;
+    font: 40px "Montserrat Bold";
+    color: #fff;
+    line-height: 49px;
+    margin-bottom: 29px;
+    @media screen and (max-width: 768px) {
+      font-size: 32px;
+      line-height: 39px;
+    }
+    @media screen and (max-width: 320px) {
+      width: 264px;
+    }
+    &__colored {
+      color: #fc9b09;
+    }
   }
+  //Блок с предложением
+  &-price {
+    display: -webkit-flex;
+    display: flex;
+    box-sizing: border-box;
+    padding: 11px 0 0 22px;
+    margin-bottom: 22px;
+    font-family: Montserrat, sans-serif;
+    position: relative;
+    width: 224px;
+    height: 86px;
+    background: #FC9B09;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    color: #fff;
+    &__figure {
+      position: absolute;
+      border: 10px solid transparent;
+      border-right: 12px solid #FC9B09;
+      border-bottom: 12px solid #FC9B09;
+      box-shadow: 3px 4px 4px -1px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      transform: rotate(45deg);
+      bottom: -9px;
+      right: 75px;
+    }
+    //Обертка цены
+    &__wrapper {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+    }
+    &__title {
+      font-size: 20px;
+    }
+    &__cost {
+      font-family: "Montserrat Bold", sans-serif;
+      font-size: 35px;
+    }
+    //Символ рубля
+    &__currency {
+      font-family: Rouble, sans-serif;
+    }
+    //Круг с процентом
+    &__percent {
+      margin: 5px 10px;
+      font: 35px "Montserrat Bold", sans-serif;
+      box-sizing: border-box;
+      padding: 4px 10px;
+      width: 52px;
+      height: 52px;
+      border: 1px solid #fff;
+      border-radius: 50%;
+    }
+  }
+  //Кнопка резервации
+  &-reservation {
+    box-sizing: border-box;
+    width: 304px;
+    padding: 20px 37px 20px 37px;
+    border: 3px solid #fff;
+    text-align: center;
+    font: 18px "Montserrat Bold", sans-serif;
+    color: #fff;
+    box-shadow: 0 4px 4px rgba(255, 255, 255, 0.25), 0 4px 70px rgba(255, 255, 255, 0.7);
+    border-radius: 3px;
+    @media screen and (max-width: 320px) {
+      width: 275px;
+      padding: 20px 0;
+    }
   }
 }
