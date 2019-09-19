@@ -20,11 +20,19 @@
     @media screen and (max-width: 500px) {
       padding-left: 15px;
     }
+    @media screen and (max-width: 360px) {
+      padding-right: 15px;
+      height: 60px;
+    }
     &-city {
+      padding-top: 5px;
       color: #5286EC;
       font: @header-top-font;
+      font-size: 14px;
+      line-height: 17px;
       text-decoration: none;
       display: none;
+      margin-left: 45px;
       @media screen and (max-width: 360px) {
         display: block;
       }
@@ -46,5 +54,25 @@
     height: 840px;
     background: url("../../img/helimain.png") no-repeat center center;
     background-clip: border-box;
+    @media screen and (max-width: 1200px) {
+      background-position-x: -600px;
+    }
+    @media screen and (max-width: 800px) {
+      background-position-x: -800px;
+    }
+    @media screen and (max-width: 600px) {
+      background-position-x: -820px;
+    }
+    @media screen and (max-width: 320px) {
+      background: url("../../img/helimain_small.png") center center;
+      height: 655px;
+    }
+  }
+  &__login {
+    display: none;
+    margin-left: auto;
+    @media screen and (max-width: 360px) {
+    display: block;
+  }
   }
 }
