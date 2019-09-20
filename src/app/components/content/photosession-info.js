@@ -1,10 +1,12 @@
 import React from 'react';
+import VideoBlock from './videoBlock'
 
-import clockImage from '../../img/clock.svg'
-import cameraImage from '../../img/camera.svg'
-import addressImage from '../../img/address.svg'
-import speechImage from '../../img/speech.svg'
-import cupImage from '../../img/cup.svg'
+import clockImage from '../../img/clock.svg';
+import cameraImage from '../../img/camera.svg';
+import addressImage from '../../img/address.svg';
+import speechImage from '../../img/speech.svg';
+import cupImage from '../../img/cup.svg';
+import starsImage from '../../img/stars.png';
 
 
 export const PhotosessionInfo = () => {
@@ -47,10 +49,11 @@ export const PhotosessionInfo = () => {
               <div className="photosession-info__feedback">
                   <img className={'photosession-info__feedback-image'} src={cupImage} alt={'img'}/>
                   <span className={'photosession-info__feedback-title'}>Более 50 отзывов с оценкой</span>
+                  <img className={'photosession-info__feedback-image photosession-info__feedback-image_second'} src={starsImage} alt={'img'}/>
               </div>
-              <div className="photosession-info__block photosession-info__block_second">
-
-              </div>
+          </div>
+          <div className="photosession-info__block photosession-info__block_second">
+              <VideoBlock/>
           </div>
       </section>
   )
