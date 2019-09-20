@@ -8,7 +8,7 @@ export default class VideoBlock extends Component {
         this.setState = {
             ...props,
         };
-        this.ref = React.createRef()
+        this.ref = React.createRef();
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick(event) {

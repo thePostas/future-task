@@ -1,14 +1,30 @@
-.photosession-info {
+.photosession {
   display: -webkit-flex;
   display: flex;
   padding-top: 70px;
   color: #37373F;
+  @media screen and (max-width: 1200px) {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    align-items: center;
+  }
   &__block {
     display: -webkit-flex;
     display: flex;
     -webkit-flex-direction: column;
     flex-direction: column;
     width: 50%;
+    @media screen and (max-width: 1200px) {
+      width: 100%;
+    }
+    &_second {
+      @media screen and (max-width: 1200px) {
+        margin-top: 30px;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+    }
   }
   &__title {
     white-space: pre;
@@ -45,6 +61,12 @@
     margin-top: 20px;
     padding-bottom: 21px;
     border-bottom: 0.5px solid #C7C7C7;
+    @media screen and (max-width: 360px) {
+      text-align: center;
+      flex-wrap: wrap;
+      -webkit-justify-content: center;
+      justify-content: center;
+    }
     &-title {
       padding: 8px 0 0 10px;
     }

@@ -1,22 +1,32 @@
 .video-block {
   width: 554px;
   height: 374px;
-  background-color: #9ae2f4;
   position: relative;
   overflow: hidden;
+  @media screen and (max-width: 600px) {
+    width: 290px;
+    height: 197px;
+  }
   &__iframe {
-    transition: all 1s;
     display: none;
-    filter: opacity(0);
+    @media screen and (max-width: 600px) {
+      width: 290px;
+      height: 197px;
+    }
+    &-mobile {
+
+    }
     &_visible {
       display: block;
-      filter: opacity(1);
     }
   }
   &__image {
     cursor: pointer;
-    transition: all .5s;
     position: absolute;
+    @media screen and (max-width: 600px) {
+      width: 290px;
+      height: 197px;
+    }
     &_hidden {
       filter: opacity(0);
       transform: translateY(100%);
