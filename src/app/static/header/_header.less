@@ -2,12 +2,13 @@
 
 //Хедер
 .header {
+  max-width: 1916px;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
   //Верхняя часть хедера
-  &__top {
+  &-top {
     height: 100px;
     background-color: #fff;
     display: -webkit-flex;
@@ -30,7 +31,7 @@
       height: 60px;
     }
     //Пункт "город" (320px)
-    &-city {
+    &__city {
       padding-top: 5px;
       color: #5286EC;
       font: @header-top-font;
@@ -44,28 +45,16 @@
       }
     }
   }
-  //Телефон
+  //Позиционирование блок с номером телефона
   &__telephone {
-    color: #b3b3b3;
     margin-left: 36.11px;
-    @media screen and (max-width: 360px) {
-      display: none;
-    }
-    &-link {
-      color: #37373F;
-      //text-decoration: none;
-    }
   }
-  //Кнопка логина
+  //Позиционирование кнопки логина
   &__login {
-    display: none;
     margin-left: auto;
-    @media screen and (max-width: 360px) {
-      display: block;
-    }
   }
   //Нижняя часть хедера
-  &__bottom {
+  &-bottom {
     padding: 286px 0 0 392px;
     box-sizing: border-box;
     display: -webkit-flex;
@@ -209,5 +198,23 @@
       height: 100%;
       color: #fff;
     }
+  }
+}
+
+.telephone {
+  color: #b3b3b3;
+  @media screen and (max-width: 360px) {
+    display: none;
+  }
+  &__link {
+    color: #37373F;
+    //text-decoration: none;
+  }
+}
+
+.login {
+  display: none;
+  @media screen and (max-width: 360px) {
+    display: block;
   }
 }

@@ -2,9 +2,9 @@ import React from 'react';
 
 export const HeaderTel = props => {
     return (
-        <span className={'header__telephone'}>
+        <span className={'telephone header__telephone'}>
             Телефон:
-            <a className={'header__telephone-link'} href={'tel: 88001231212'}>
+            <a className={'telephone__link'} href={'tel: 88001231212'}>
                 { props.children }
             </a>
         </span>

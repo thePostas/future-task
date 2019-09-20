@@ -6,7 +6,7 @@ import { LoginButton } from '../header/loginButton';
 
 export const HeaderTop = () => {
     return (
-        <div className={'header__top'}>
+        <div className={'header-top'}>
             <Logo/>
             <HeaderTel>
                 8(800)-123-12-12

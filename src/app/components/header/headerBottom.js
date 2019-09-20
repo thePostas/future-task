@@ -5,7 +5,7 @@ import { ReservationButton } from './ReservationButton'
 
 export const HeaderBottom = () => {
     return (
-        <div className="header__bottom">
+        <div className="header-bottom">
             <HeaderTitle/>
             <HeaderPrice price={'1500'}/>
             <ReservationButton/>
