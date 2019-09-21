@@ -11,10 +11,12 @@ export default class VideoBlock extends Component {
         this.ref = React.createRef();
         this.handleClick = this.handleClick.bind(this);
     }
-    handleClick(event) {
+
+    handleClick = event => {
         event.target.className = 'video-block__image video-block__image_hidden';
         this.ref.current.className = 'video-block__iframe video-block__iframe_visible'
-    }
+    };
+
     render() {
         return (
             <div className="video-block">
