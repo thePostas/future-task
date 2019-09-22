@@ -1,0 +1,42 @@
+.photos {
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  padding-top: 30px;
+  &__title {
+    font-size: 20px;
+    margin-bottom: 37px;
+  }
+  &__content {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    @media screen and (max-width: 1920px) {
+      width: 564px;
+      margin: 0 auto;
+    }
+    &_hidden {
+      max-height: 384px;
+      overflow: hidden;
+    }
+  }
+  &__image {
+    margin-bottom: 11px;
+    width: 277px;
+    height: 187px;
+  }
+  &__show-hide {
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 27px;
+    &-title {
+      font-size: 17px;
+      color: #5286EC;
+      cursor: pointer;
+    }
+  }
+}
