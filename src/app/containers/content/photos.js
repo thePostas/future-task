@@ -23,15 +23,22 @@ export default class Photos extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            ...props
+            ...props,
+            text: 'Показать все фото'
         };
         this.handleClick = this.handleClick.bind(this);
         this.ref = React.createRef();
     }
 
     handleClick = (event) => {
-        this.ref.current.className = this.ref.current.className === 'photos__content photos__content_hidden' ? 'photos__content' : 'photos__content photos__content_hidden';
-
+        // this.ref.current.className = this.ref.current.className === 'photos__content photos__content_hidden' ? 'photos__content' : 'photos__content photos__content_hidden';
+        if (this.ref.current.className === 'photos__content photos__content_hidden') {
+            this.ref.current.className = 'photos__content';
+            this.setState({text: 'Скрыть фотографии'});
+        } else {
+            this.ref.current.className = 'photos__content photos__content_hidden';
+            this.setState({text: 'Показать все фото'});
+        }
     };
 
     render() {
@@ -46,7 +53,7 @@ export default class Photos extends Component {
                 </div>
                 <div className="photos__show-hide">
                     <span className="photos__show-hide-title" onClick={this.handleClick}>
-                          Показать все фото
+                        { this.state.text }
                     </span>
                 </div>
             </section>
