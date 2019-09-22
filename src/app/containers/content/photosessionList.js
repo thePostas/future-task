@@ -14,7 +14,7 @@ export default class PhotosessionList extends Component {
                     <img className={'photosession-list__item-image'} src={item.img} alt={'img'}/>
                     <span className={'photosession-list__item-title'}>
                         { item.title }
-                      </span>
+                        </span>
                 </li>
             )
         });
@@ -25,4 +25,3 @@ export default class PhotosessionList extends Component {
         )
     }
 }
-

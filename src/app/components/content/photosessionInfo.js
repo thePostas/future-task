@@ -10,7 +10,8 @@ import speechImage from '../../img/speech.svg';
 
 const listItems = [
     {img: clockImage, title: '3 часа съемки'},
-    {img: cameraImage, title: 'Более 50 фотографий'},
+    {img: cameraImage, title: 'Более' +
+        ' 50 фотографий'},
     {img: addressImage, title: 'Москва'},
     {img: speechImage, title: 'Готовы ответить на любые вопросы'},
 ];
