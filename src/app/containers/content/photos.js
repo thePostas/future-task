@@ -31,13 +31,14 @@ export default class Photos extends Component {
     }
 
     handleClick = (event) => {
-        // this.ref.current.className = this.ref.current.className === 'photos__content photos__content_hidden' ? 'photos__content' : 'photos__content photos__content_hidden';
         if (this.ref.current.className === 'photos__content photos__content_hidden') {
             this.ref.current.className = 'photos__content';
             this.setState({text: 'Скрыть фотографии'});
+            event.target.className = 'photos__show-hide-title photos__show-hide-title_showed';
         } else {
             this.ref.current.className = 'photos__content photos__content_hidden';
             this.setState({text: 'Показать все фото'});
+            event.target.className = 'photos__show-hide-title';
         }
     };
 

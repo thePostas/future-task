@@ -5,38 +5,93 @@
   -webkit-flex-direction: column;
   flex-direction: column;
   padding-top: 30px;
+  overflow: hidden;
+  border-bottom: 0.5px solid #C7C7C7;
   &__title {
     font-size: 20px;
     margin-bottom: 37px;
+    @media screen and (max-width: 1200px) {
+      text-align: center;
+    }
+    @media screen and (max-width: 320px) {
+      font: 28px Montserrat, sans-serif;
+      line-height: 34px;
+      text-align: center;
+      padding: 0 20px;
+    }
   }
   &__content {
     display: -webkit-flex;
     display: flex;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-justify-content: space-around;
     justify-content: space-around;
-    @media screen and (max-width: 1920px) {
+    @media screen and (max-width: 1850px) {
       width: 564px;
       margin: 0 auto;
     }
+    @media screen and (max-width: 630px) {
+      width: 100%;
+      height: 185px;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      -webkit-justify-content: flex-start;
+      justify-content: flex-start;
+    }
     &_hidden {
-      max-height: 384px;
+      max-height: 385px;
       overflow: hidden;
+      @media screen and (max-width: 630px) {
+        overflow: auto;
+      }
     }
   }
   &__image {
     margin-bottom: 11px;
     width: 277px;
     height: 187px;
+    @media screen and (max-width: 630px) {
+      margin-right: 13px;
+    }
   }
   &__show-hide {
     text-align: center;
     margin-top: 45px;
     margin-bottom: 27px;
+    @media screen and (max-width: 630px) {
+      display: none;
+    }
     &-title {
+      position: relative;
       font-size: 17px;
       color: #5286EC;
       cursor: pointer;
+      &:before{
+        content: '';
+        position: absolute;
+        width: 11px;
+        height: 6px;
+        background: url("../../img/Arrow.svg") no-repeat;
+        bottom: 5px;
+        left: -25px;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        width: 11px;
+        height: 6px;
+        background: url("../../img/Arrow.svg") no-repeat;
+        bottom: 5px;
+        right: -25px;
+      }
+      &_showed {
+        &:before, &:after {
+          transform: rotate(180deg);
+        }
+      }
     }
   }
 }
