@@ -1,0 +1,64 @@
+//Информация о фотографе
+.sponsor {
+  display: -webkit-flex;
+  display: flex;
+  padding-top: 37px;
+  color: #37373F;
+  font-size: 16px;
+  line-height: 24px;
+  //Блоки с информацией
+  &__block {
+    width: 50%;
+  }
+  //Первый блок, с описанием
+  &__info {
+    //Заголовок параграфа
+    &-title {
+      font: 18px "Montserrat Bold", sans-serif;
+      margin-bottom: 14px;
+      line-height: 26px;
+    }
+    //Параграф "Об организаторе"
+    &-text {
+      white-space: pre-wrap;
+      //Кнопка "скрыть/показать"
+      &-show {
+        position: relative;
+        display: block;
+        margin: 10px 0 40px 0;
+        color: #5286EC;
+        cursor: pointer;
+        &:after {
+          width: 11px;
+          height: 6px;
+          content: '';
+          position: absolute;
+          background: url("../../img/Arrow.svg") no-repeat;
+          left: 15%;
+          bottom: 8px;
+          transform: rotate(180deg);
+        }
+        &_hidden {
+          &:after {
+            left: 19%;
+            transform: rotate(0deg);
+          }
+        }
+      }
+      //Размер первого параграфа в скрытом состоянии
+      &_hidden {
+        max-height: 240px;
+        overflow: hidden;
+      }
+      //Второй параграф
+      &-additional {
+        white-space: pre-wrap;
+        //Размер второго параграфа в скрытом состоянии
+        &_hidden {
+          max-height: 120px;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
