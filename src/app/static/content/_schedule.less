@@ -4,15 +4,30 @@
   -webkit-flex-direction: column;
   flex-direction: column;
   padding-top: 50px;
+  &__title {
+
+  }
   &__table {
     display: -webkit-flex;
     display: flex;
     -webkit-flex-direction: column;
     flex-direction: column;
     border: 1px solid #C7C7C7;
+    max-width: 770px;
+    &-section {
+      box-sizing: border-box;
+      padding: 20px 30px;
+      &_first {
+        border-bottom: 1px solid #C7C7C7;
+      }
+    }
     &-calendar {
       display: -webkit-flex;
       display: flex;
+      -webkit-align-items: center;
+      align-items: center;
+      height: 74px;
+      border-bottom: 1px solid #C7C7C7;
       &-icon {
         width: 35px;
         height: 35px;
@@ -21,7 +36,7 @@
         background: url("../../img/calendar.png") no-repeat center center;
       }
       &-date {
-        display: none;
+        margin-right: 14px;
       }
     }
   }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-date-picker';
-import image from '../../img/calendar.png';
 
 export class Schedule extends Component {
     constructor(props) {
@@ -22,8 +21,8 @@ export class Schedule extends Component {
                     Доступная съемка в ближайшее время:
                 </h3>
                 <div className="schedule__table">
-                    <div className="schedule__table-calendar">
-                  <span>
+                    <div className="schedule__table-section schedule__table-calendar">
+                  <span className={'schedule__table-calendar-date'}>
                       {`${this.day[renderDate[0]]}, ${renderDate[2]} ${this.monthToRus[renderDate[1]]}`}
                   </span>
                         <DatePicker
