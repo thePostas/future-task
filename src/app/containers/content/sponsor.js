@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Photographer } from '../../components/content/photographer'
 
 export default class Sponsor extends Component {
     constructor(props) {
@@ -45,7 +46,10 @@ export default class Sponsor extends Component {
     render() {
     return(
         <section className="sponsor">
-            <div className="sponsor__block">
+            <div className="sponsor__block sponsor__block_first">
+                <Photographer/>
+            </div>
+            <div className="sponsor__block sponsor__block_second">
                 <div className="sponsor__info">
                     <h4 className="sponsor__info-title">
                         Об организаторе:
@@ -68,9 +72,11 @@ export default class Sponsor extends Component {
                         {'\n'}
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt distinctio dolorem explicabo magnam maiores minus, molestiae nesciunt, quaerat quod ratione, reiciendis sapiente sequi totam? Corporis labore magnam quibusdam rem voluptatibus!
                     </p>
-                    <span onClick={this.handleClick.bind(this, 'first')} className="sponsor__info-text-show sponsor__info-text-show_hidden">
-                        { this.state.buttonFirst }
-                    </span>
+                    <div className="sponsor__info-text-wrapper">
+                        <span onClick={this.handleClick.bind(this, 'first')} className="sponsor__info-text-show sponsor__info-text-show_hidden">
+                            { this.state.buttonFirst }
+                        </span>
+                    </div>
                 </div>
                 <div className="sponsor__additional-info">
                     <h4 className="sponsor__info-title sponsor__additional-info-title">
@@ -82,6 +88,7 @@ export default class Sponsor extends Component {
                         При необходимости всегда возможно прерваться на обед/ужин.
                         Более 50 фотографий на выходе с обработкой и замечательные впечатления о Дубае !
                         {'\n'}
+                        {'\n'}
                         Lorem ipsum dolor sit amet,
                         consectetur adipisicing elit.
                         Aliquid amet animi consequatur
@@ -89,12 +96,12 @@ export default class Sponsor extends Component {
                         inventore ipsum labore natus nisi nostrum,
                         uaerat quod repellat suscipit tempora vel vero.
                     </p>
-                    <span onClick={this.handleClick.bind(this, 'second')} className="sponsor__info-text-show sponsor__info-text-show_hidden">
-                        { this.state.buttonSecond }
-                    </span>
+                    <div className="sponsor__info-text-wrapper">
+                        <span onClick={this.handleClick.bind(this, 'second')} className="sponsor__info-text-show sponsor__info-text-show_hidden">
+                            { this.state.buttonSecond }
+                        </span>
+                    </div>
                 </div>
-            </div>
-            <div className="sponsor__block">
             </div>
         </section>
     )

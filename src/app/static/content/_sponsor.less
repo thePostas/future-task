@@ -2,13 +2,35 @@
 .sponsor {
   display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
   padding-top: 37px;
   color: #37373F;
   font-size: 16px;
   line-height: 24px;
+  @media screen and (max-width: 768px) {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
   //Блоки с информацией
   &__block {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
     width: 50%;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      margin-bottom: 25px;
+    }
+    &_first {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      -webkit-align-items: center;
+      align-items: center;
+    }
   }
   //Первый блок, с описанием
   &__info {
@@ -22,10 +44,11 @@
     &-text {
       white-space: pre-wrap;
       //Кнопка "скрыть/показать"
+      &-wrapper {
+        margin: 10px 0 40px 0;
+      }
       &-show {
         position: relative;
-        display: block;
-        margin: 10px 0 40px 0;
         color: #5286EC;
         cursor: pointer;
         &:after {
@@ -34,13 +57,13 @@
           content: '';
           position: absolute;
           background: url("../../img/Arrow.svg") no-repeat;
-          left: 15%;
-          bottom: 8px;
+          bottom: 5px;
+          right: -30%;
           transform: rotate(180deg);
         }
         &_hidden {
           &:after {
-            left: 19%;
+            right: -20%;
             transform: rotate(0deg);
           }
         }
@@ -49,6 +72,9 @@
       &_hidden {
         max-height: 240px;
         overflow: hidden;
+        @media screen and (max-width: 630px) {
+          max-height: 435px;
+        }
       }
       //Второй параграф
       &-additional {
@@ -57,6 +83,9 @@
         &_hidden {
           max-height: 120px;
           overflow: hidden;
+          @media screen and (max-width: 630px) {
+            max-height: 215px;
+          }
         }
       }
     }

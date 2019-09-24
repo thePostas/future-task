@@ -19,7 +19,7 @@ export default class PhotosessionList extends Component {
             )
         });
         return(
-            <ul className="photosession-list">
+            <ul className="photosession-list photosession-list_position">
                 { listElements }
             </ul>
         )
