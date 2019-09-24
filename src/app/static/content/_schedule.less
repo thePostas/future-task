@@ -1,0 +1,47 @@
+.schedule {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  padding-top: 50px;
+  &__table {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    border: 1px solid #C7C7C7;
+    &-calendar {
+      display: -webkit-flex;
+      display: flex;
+      &-icon {
+        width: 35px;
+        height: 35px;
+        border: 0.5px solid #C4C4C4;
+        border-radius: 3px;
+        background: url("../../img/calendar.png") no-repeat center center;
+      }
+      &-date {
+        display: none;
+      }
+    }
+  }
+}
+
+//Переопределение стилей датапикера
+.react-date-picker__inputGroup, .react-date-picker__clear-button, .react-date-picker__calendar-button__icon {
+   display: none !important;
+ }
+
+.react-date-picker__wrapper {
+  width: 35px;
+  height: 35px;
+  border: 0.5px solid #C4C4C4;
+  border-radius: 3px;
+  background: url("../../img/calendar.png") no-repeat center center;
+}
+
+.react-date-picker__calendar-button {
+
+  width: 100% !important;
+  height: 100% !important;
+}
