@@ -1,2 +1,3 @@
 # future-task
-future-task
+Установка зависимостей npm i
+Сборка webpack
