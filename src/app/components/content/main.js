@@ -3,7 +3,7 @@ import { PhotosessionInfo } from './photosessionInfo';
 import { PhotosessionInfoMobile } from './photosessionInfoMobile';
 import Photos from '../../containers/content/photos';
 import Sponsor from '../../containers/content/sponsor';
-import { Schedule } from './schedule'
+import { Schedule } from '../../containers/content/schedule'
 
 export const MainContent = () => {
   return (

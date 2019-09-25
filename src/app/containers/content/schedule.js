@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-date-picker';
+import { ScheduleItem } from '../../components/content/scheduleItem';
+import { PhotosessionFeedback } from '../../components/content/photosessionFeedback';
 
 export class Schedule extends Component {
     constructor(props) {
@@ -10,15 +12,31 @@ export class Schedule extends Component {
         };
         this.onChange = date => this.setState({ date });
         this.monthToRus = {Jan: "января", Feb: "февраля", Mar: "марта", Apr: "апреля", May: "мая", Jun: "июня", Jul: "июля", Aug: "августа", Sep: "сентября", Oct: "октября", Nov: "ноября", Dec: "декабря"};
-        this.day = {Mon: "Понедельник", Tue: "Вторник", Wed: "Среда", Thu: 'Четверг', Fri: "Пятница", Sat: "Суббота", Sun: "Воскресенье"}
+        this.day = {Mon: "Понедельник", Tue: "Вторник", Wed: "Среда", Thu: 'Четверг', Fri: "Пятница", Sat: "Суббота", Sun: "Воскресенье"};
+        this.photosessions = [
+            {
+                time: '15:00 - 18:00',
+                price: 1500,
+                count: 'Осталось — 1 место'
+            },
+            {
+                time: '19:00 - 22:00',
+                price: 1500,
+                count: 'Осталось — 1 место'
+            }
+        ]
     }
     render() {
-        console.log(this.state.date);
         const renderDate = this.state.date.toString().split(' ');
+        const photosessions = this.photosessions.map((item, index) => {
+            return <ScheduleItem key={index} time={item.time} price={item.price} count={item.count}/>
+        });
         return(
             <section className="schedule">
                 <h3 className="schedule__title">
-                    Доступная съемка в ближайшее время:
+                    Доступная съемка
+                    {'\n'}
+                    в ближайшее время:
                 </h3>
                 <div className="schedule__table">
                     <div className="schedule__table-section schedule__table-calendar">
@@ -30,11 +48,9 @@ export class Schedule extends Component {
                             value={this.state.date}
                         />
                     </div>
-                    <div className="schedule__table-section schedule__table-section_first">
-
-                    </div>
-                    <div className="schedule__table-section schedule__table-section_second">
-
+                    { photosessions }
+                    <div className="schedule__table-section">
+                        <PhotosessionFeedback/>
                     </div>
                 </div>
             </section>

@@ -5,7 +5,9 @@
   flex-direction: column;
   padding-top: 50px;
   &__title {
-
+    margin-bottom: 30px;
+    white-space: pre-wrap;
+    line-height: 29px;
   }
   &__table {
     display: -webkit-flex;
@@ -17,9 +19,12 @@
     &-section {
       box-sizing: border-box;
       padding: 20px 30px;
-      &_first {
-        border-bottom: 1px solid #C7C7C7;
-      }
+    }
+    &-section > .photosession-feedback {
+      border-bottom: none;
+      text-align: left;
+      font-size: 13px;
+      white-space: nowrap;
     }
     &-calendar {
       display: -webkit-flex;
@@ -27,7 +32,6 @@
       -webkit-align-items: center;
       align-items: center;
       height: 74px;
-      border-bottom: 1px solid #C7C7C7;
       &-icon {
         width: 35px;
         height: 35px;
@@ -37,6 +41,54 @@
       }
       &-date {
         margin-right: 14px;
+      }
+    }
+    &-item {
+      display: -webkit-flex;
+      display: flex;
+      border-top: 1px solid #C7C7C7;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      @media screen and (max-width: 500px) {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-align-items: flex-start;
+        align-items: flex-start;
+      }
+      &-wrapper {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+      }
+      &-time {
+        margin-bottom: 10px;
+      }
+      &-price {
+        font-weight: bold;
+        margin-bottom: 10px;
+        &-currency {
+          font-family: Rouble, sans-serif;
+        }
+      }
+      &-choose {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        width: 129px;
+        height: 50px;
+        border: 2px solid #FC9B09;
+        border-radius: 3px;
+        color: #FC9B09;
+        cursor: pointer;
+        @media screen and (max-width: 500px) {
+          margin-top: 20px;
+        }
       }
     }
   }
