@@ -4,6 +4,7 @@ import { PhotosessionInfoMobile } from './photosessionInfoMobile';
 import Photos from '../../containers/content/photos';
 import Sponsor from '../../containers/content/sponsor';
 import { Schedule } from '../../containers/content/schedule'
+import { Map } from './map'
 
 export const MainContent = () => {
   return (
@@ -13,6 +14,7 @@ export const MainContent = () => {
           <Photos/>
           <Sponsor/>
           <Schedule/>
+          <Map/>
       </main>
   )
 };

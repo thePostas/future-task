@@ -3,7 +3,7 @@
   display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
-  padding-top: 50px;
+  padding: 50px 0 82px 0;
   &__title {
     margin-bottom: 30px;
     white-space: pre-wrap;
@@ -23,8 +23,10 @@
     &-section > .photosession-feedback {
       border-bottom: none;
       text-align: left;
-      font-size: 13px;
       white-space: nowrap;
+      @media screen and (max-width: 320px) {
+        font-size: 13px;
+      }
     }
     &-calendar {
       display: -webkit-flex;
@@ -85,6 +87,7 @@
         border: 2px solid #FC9B09;
         border-radius: 3px;
         color: #FC9B09;
+        font-size: 14px;
         cursor: pointer;
         @media screen and (max-width: 500px) {
           margin-top: 20px;
