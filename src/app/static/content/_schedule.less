@@ -24,8 +24,12 @@
       border-bottom: none;
       text-align: left;
       white-space: nowrap;
+      @media screen and (max-width: 400px) {
+        white-space: pre-wrap;
+      }
       @media screen and (max-width: 320px) {
         font-size: 13px;
+        white-space: nowrap;
       }
     }
     &-calendar {
