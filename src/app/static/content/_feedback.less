@@ -1,0 +1,35 @@
+.feedback {
+  margin-top: 100px;
+  padding: 30px 350px 0 391px;
+  box-sizing: border-box;
+  @media screen and (max-width: 1500px) {
+    padding: 0 120px;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 0 40px;
+  }
+  @media screen and (max-width: 320px) {
+    padding: 0 13px;
+  }
+  &__title {
+    font: 20px Montserrat, sans-serif;
+    font-weight: bold;
+    color: #37373F;
+    margin-bottom: 20px;
+  }
+  &__inner {
+
+  }
+  &__item {
+    &-image {
+      width: 101px;
+      height: 101px;
+      border-radius: 50%;
+    }
+    &-profession {
+      &_hidden {
+        display: none;
+      }
+    }
+  }
+}
