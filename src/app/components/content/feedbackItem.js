@@ -1,16 +1,24 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-export const FeedbackItem = props => {
-    return (
+export default class FeedbackItem extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            ...props,
+        };
+    }
+
+    render() {
+        return (
         <div className={'feedback__item'}>
             <div className={'feedback__item-desktop'}>
-                <img className="feedback__item-image" src={props.photo || null}/>
+                <img className="feedback__item-image" src={this.props.photo || null}/>
                 <div className="feedback__item-wrapper">
                     <div className="feedback__item-name">
-                        { props.name }
+                        { this.props.name }
                     </div>
-                    <div className={props.profession ? "feedback__item-profession" : "feedback__item-profession_hidden"}>
-                        { props.profession }
+                    <div className={this.props.profession ? "feedback__item-profession" : "feedback__item-profession_hidden"}>
+                        { this.props.profession }
                     </div>
                     <div className="feedback__item-rating">
                         <div className="feedback__item-rating-stars"/>
@@ -19,21 +27,21 @@ export const FeedbackItem = props => {
                         </div>
                     </div>
                     <div className="feedback__item-text">
-                        { props.text }
+                        { this.props.text }
                     </div>
                     <div className="feedback__item-date">
-                        { props.date }
+                        { this.props.date }
                     </div>
                 </div>
             </div>
             <div className="feedback__item-mobile">
-                <img className="feedback__item-image" src={props.photo || null}/>
+                <img className="feedback__item-image" src={this.props.photo || null}/>
                 <div className={'feedback__item-wrapper-mobile'}>
                     <div className="feedback__item-name feedback__item-name_mobile">
-                        { props.name }
+                        { this.props.name }
                     </div>
-                    <div className={props.profession ? "feedback__item-profession feedback__item-profession-mobile" : "feedback__item-profession_hidden"}>
-                        { props.profession }
+                    <div className={this.props.profession ? "feedback__item-profession feedback__item-profession-mobile" : "feedback__item-profession_hidden"}>
+                        { this.props.profession }
                     </div>
                     <div className="feedback__item-rating-stars feedback__item-rating-stars_mobile"/>
                 </div>
@@ -41,16 +49,16 @@ export const FeedbackItem = props => {
                     Супер! Я бы заказал съемку снова!
                 </div>
                 <div className="feedback__item-text">
-                    { props.text }
+                    { this.props.text }
                 </div>
                 <div className="feedback__item-date">
-                    { props.date }
+                    { this.props.date }
                 </div>
             </div>
         </div>
-    )
-};
-
+        )
+    }
+}
 FeedbackItem.defaultProps = {
     photo: "",
     name: "Имя фамилия",

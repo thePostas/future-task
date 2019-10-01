@@ -1,6 +1,7 @@
 .feedback {
+  position: relative;
   margin-top: 100px;
-  padding: 30px 350px 0 391px;
+  padding: 30px 350px 115px 391px;
   box-sizing: border-box;
   font-family: Montserrat, sans-serif;
   color: #37373F;
@@ -8,13 +9,13 @@
     margin-top: 40px;
   }
   @media screen and (max-width: 1500px) {
-    padding: 0 120px;
+    padding: 0 120px 115px 120px;
   }
   @media screen and (max-width: 768px) {
-    padding: 0 40px;
+    padding: 0 40px 115px 40px;
   }
   @media screen and (max-width: 320px) {
-    padding: 0 13px;
+    padding: 0 13px 115px 13px;
   }
   &__title {
     font: 20px Montserrat, sans-serif;
@@ -28,7 +29,11 @@
     }
   }
   &__inner {
-
+    max-height: 1000px;
+    overflow: hidden;
+    &_showed {
+      max-height: inherit;
+    }
   }
   &__item {
     &-image {
@@ -127,6 +132,19 @@
         display: flex;
           flex-wrap: wrap;
       }
+    }
+  }
+  &__button {
+    position: absolute;
+    right: 45%;
+    bottom: 47px;
+    cursor: pointer;
+    font: 17px Montserrat, sans-serif;
+    line-height: 25px;
+    font-weight: bold;
+    color: #5286EC;
+    @media screen and (max-width: 320px) {
+      right: 30%;
     }
   }
 }
