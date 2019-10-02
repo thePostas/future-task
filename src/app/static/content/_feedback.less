@@ -29,10 +29,16 @@
     }
   }
   &__inner {
-    max-height: 1000px;
-    overflow: hidden;
-    &_showed {
-      max-height: inherit;
+    &_hidden {
+      overflow: hidden;
+      & > div:not(.feedback__item_1):not(.feedback__item_2):not(.feedback__item_3) {
+        display: none;
+      }
+      @media screen and (max-width: 768px) {
+        & > div:not(.feedback__item_1):not(.feedback__item_2) {
+          display: none;
+        }
+      }
     }
   }
   &__item {

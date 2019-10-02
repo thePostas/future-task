@@ -10,7 +10,7 @@ export default class FeedbackItem extends Component {
 
     render() {
         return (
-        <div className={'feedback__item'}>
+        <div className={`feedback__item feedback__item_${this.props.id}`}>
             <div className={'feedback__item-desktop'}>
                 <img className="feedback__item-image" src={this.props.photo || null}/>
                 <div className="feedback__item-wrapper">
