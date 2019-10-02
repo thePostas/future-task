@@ -1,0 +1,96 @@
+//Информация о фотографе
+.sponsor {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  padding-top: 37px;
+  color: #37373F;
+  font-size: 16px;
+  line-height: 24px;
+  border-bottom: 0.5px solid #C7C7C7;
+  @media screen and (max-width: 768px) {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    border-bottom: none;
+  }
+  //Блоки с информацией
+  &__block {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    width: 50%;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      margin-bottom: 25px;
+    }
+    &_first {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+  }
+  //Первый блок, с описанием
+  &__info {
+    //Заголовок параграфа
+    &-title {
+      font: 18px "Montserrat", sans-serif;
+      font-weight: bold;
+      margin-bottom: 14px;
+      line-height: 26px;
+    }
+    //Параграф "Об организаторе"
+    &-text {
+      white-space: pre-wrap;
+      //Кнопка "скрыть/показать"
+      &-wrapper {
+        margin: 10px 0 40px 0;
+      }
+      &-show {
+        position: relative;
+        color: #5286EC;
+        cursor: pointer;
+        &:after {
+          width: 11px;
+          height: 6px;
+          content: '';
+          position: absolute;
+          background: url("../../img/Arrow.svg") no-repeat;
+          bottom: 5px;
+          right: -30%;
+          transform: rotate(180deg);
+        }
+        &_hidden {
+          &:after {
+            right: -20%;
+            transform: rotate(0deg);
+          }
+        }
+      }
+      //Размер первого параграфа в скрытом состоянии
+      &_hidden {
+        max-height: 240px;
+        overflow: hidden;
+        @media screen and (max-width: 630px) {
+          max-height: 435px;
+        }
+      }
+      //Второй параграф
+      &-additional {
+        white-space: pre-wrap;
+        //Размер второго параграфа в скрытом состоянии
+        &_hidden {
+          max-height: 120px;
+          overflow: hidden;
+          @media screen and (max-width: 630px) {
+            max-height: 215px;
+          }
+        }
+      }
+    }
+  }
+}

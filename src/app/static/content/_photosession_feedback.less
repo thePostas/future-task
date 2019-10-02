@@ -1,0 +1,44 @@
+.photosession-feedback {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  padding-bottom: 21px;
+  border-bottom: 0.5px solid #C7C7C7;
+  &_position {
+    margin-top: 20px;
+  }
+  @media screen and (max-width: 360px) {
+    text-align: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+  @media screen and (max-width: 320px) {
+    width: 100%;
+    margin-top: 14px;
+    padding-bottom: 14px;
+  }
+  &__wrapper {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    @media screen and (max-width: 500px) {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+    }
+    @media screen and (max-width: 320px) {
+      margin-top: 14px;
+      padding-bottom: 14px;
+    }
+  }
+  &__title {
+    padding: 8px 0 0 10px;
+  }
+  &__image {
+    &_second {
+      margin: 5px 0 0 14px;
+      align-self: flex-start;
+    }
+  }
+}

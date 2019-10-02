@@ -1,0 +1,49 @@
+@import './_payments';
+
+.footer-bottom {
+  width: 100%;
+  min-height: 90px;
+  background-color: #FAF9F8;
+  @media screen and (max-width: 500px) {
+    background-color: #fff;
+  }
+  &__inner {
+    display: -webkit-flex;
+    display: flex;
+    max-width: 968px;
+    height: 100%;
+    padding: 0 452px 0 461.5px;
+    @media screen and (max-width: 1500px) {
+      padding: 0 120px;
+    }
+    @media screen and (max-width: 768px) {
+      padding: 0 20px;
+    }
+    @media screen and (max-width: 500px) {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+    @media screen and (max-width: 320px) {
+      padding: 0 13px;
+    }
+  }
+  &__info {
+    font: 14px Montserrat, sans-serif;
+    line-height: 17px;
+    color: #B3B3B3;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    margin-top: 3px;
+    &-support {
+      color: #B3B3B3;
+      margin-bottom: 7px;
+      @media screen and (max-width: 500px) {
+        margin-top: 24px;
+      }
+    }
+  }
+}

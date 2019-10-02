@@ -1,0 +1,187 @@
+.feedback {
+  position: relative;
+  margin-top: 100px;
+  padding: 30px 350px 115px 391px;
+  box-sizing: border-box;
+  font-family: Montserrat, sans-serif;
+  color: #37373F;
+  @media screen and (max-width: 768px) {
+    margin-top: 40px;
+  }
+  @media screen and (max-width: 1500px) {
+    padding: 0 120px 115px 120px;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 0 40px 115px 40px;
+  }
+  @media screen and (max-width: 320px) {
+    padding: 0 13px 115px 13px;
+  }
+  &__title {
+    font: 20px Montserrat, sans-serif;
+    font-weight: bold;
+    color: #37373F;
+    margin-bottom: 20px;
+    @media screen and (max-width: 768px) {
+      font-size: 28px;
+      line-height: 42px;
+      text-align: center;
+    }
+  }
+  &__inner {
+    &_hidden {
+      overflow: hidden;
+      & > div:not(.feedback__item_1):not(.feedback__item_2):not(.feedback__item_3) {
+        display: none;
+      }
+      @media screen and (max-width: 768px) {
+        & > div:not(.feedback__item_1):not(.feedback__item_2) {
+          display: none;
+        }
+      }
+    }
+  }
+  &__item {
+    &-image {
+      width: 101px;
+      height: 101px;
+      border-radius: 50%;
+      @media screen and (max-width: 768px) {
+        width: 84px;
+        height: 84px;
+      }
+    }
+    &-wrapper {
+      padding-top: 8px;
+      margin-left: 20px;
+      border-bottom: 0.5px solid #C7C7C7;
+      padding-bottom: 35px;
+      max-width: 510px;
+      &-mobile {
+        margin-left: 18px;
+      }
+    }
+    &-name {
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: bold;
+      @media screen and (max-width: 768px) {
+        font-size: 16px;
+      }
+    }
+    &-profession {
+      font-size: 14px;
+      line-height: 21px;
+      &_hidden {
+        display: none;
+      }
+    }
+    &-rating {
+      display: -webkit-flex;
+      display: flex;
+      padding-bottom: 20px;
+      margin-top: 19px;
+      @media screen and (max-width: 768px) {
+        margin-top: 7px;
+      }
+      @media screen and (max-width: 768px) {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+      }
+      &-stars {
+        width: 118px;
+        height: 17px;
+        background: url("../../img/stars.png") no-repeat center center;
+      }
+      &-text {
+        background: url("../../img/check.png") no-repeat center left;
+        margin-left: 50px;
+        padding-left: 20px;
+        font-size: 14px;
+        line-height: 21px;
+        color: #B3B3B3;
+        &_mobile {
+          margin: 24px 0 14px 0;
+        }
+        @media screen and (max-width: 768px) {
+          margin-left: 0;
+        }
+      }
+    }
+    &-text {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 22px;
+      @media screen and (max-width: 768px) {
+        font-size: 14px;
+      }
+    }
+    &-date {
+      font-size: 14px;
+      line-height: 21px;
+      color: #B3B3B3;
+    }
+    &-desktop {
+      display: -webkit-flex;
+      display: flex;
+      padding-top: 30px;
+      @media screen and (max-width: 500px) {
+        display: none;
+      }
+    }
+    &-mobile {
+      padding-top: 30px;
+      display: none;
+      padding-bottom: 44px;
+      border-bottom: 0.5px solid #C7C7C7;
+      @media screen and (max-width: 500px) {
+        display: flex;
+          flex-wrap: wrap;
+      }
+    }
+  }
+  &__button {
+    position: absolute;
+    right: 45%;
+    bottom: 47px;
+    cursor: pointer;
+    font: 17px Montserrat, sans-serif;
+    line-height: 25px;
+    font-weight: bold;
+    color: #5286EC;
+    @media screen and (max-width: 768px) {
+      right: 40%;
+    }
+    //@media screen and (max-width: 320px) {
+    //  right: 40%;
+    //}
+    &:before{
+      content: '';
+      position: absolute;
+      width: 11px;
+      height: 6px;
+      background: url("../../img/Arrow.svg") no-repeat;
+      bottom: 8px;
+      left: -20px;
+      transform: rotate(180deg);
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      width: 11px;
+      height: 6px;
+      background: url("../../img/Arrow.svg") no-repeat;
+      bottom: 8px;
+      right: -20px;
+      transform: rotate(180deg);
+    }
+    &_hidden {
+      @media screen and (max-width: 320px) {
+        right: 30%;
+      }
+      &:before, &:after {
+        transform: rotate(0deg);
+      }
+    }
+  }
+}

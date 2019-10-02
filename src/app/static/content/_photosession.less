@@ -1,0 +1,73 @@
+//Блок с описанием фотосессии
+.photosession {
+  display: -webkit-flex;
+  display: flex;
+  padding-top: 70px;
+  color: #37373F;
+  @media screen and (max-width: 1200px) {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  @media screen and (max-width: 320px) {
+    display: none
+  }
+  &__block {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    width: 50%;
+    @media screen and (max-width: 1200px) {
+      width: 100%;
+    }
+    &_second {
+      @media screen and (max-width: 1200px) {
+        margin-top: 30px;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+    }
+  }
+  &__title {
+    white-space: pre;
+    font-size: 40px;
+    line-height: 49px;
+    margin-bottom: 29px;
+  }
+  &__description {
+    max-width: 549px;
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 24px;
+  }
+}
+
+//Мобильная версия
+
+.photosession-mobile {
+  display: none;
+  @media screen and (max-width: 320px) {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    align-items: center;
+    padding-top: 39px;
+    &__title {
+      text-align: center;
+      white-space: pre;
+      font-size: 28px;
+      line-height: 34px;
+      margin-bottom: 13px;
+    }
+    &__description {
+      max-width: 549px;
+      font-size: 14px;
+      line-height: 20px;
+      margin-top: 30px;
+    }
+  }
+}

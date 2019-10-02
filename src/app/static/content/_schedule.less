@@ -1,0 +1,121 @@
+.schedule {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  padding: 50px 0 82px 0;
+  &__title {
+    margin-bottom: 30px;
+    white-space: pre-wrap;
+    line-height: 29px;
+  }
+  &__table {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    border: 1px solid #C7C7C7;
+    max-width: 770px;
+    &-section {
+      box-sizing: border-box;
+      padding: 20px 30px;
+    }
+    &-section > .photosession-feedback {
+      border-bottom: none;
+      text-align: left;
+      white-space: nowrap;
+      @media screen and (max-width: 400px) {
+        white-space: pre-wrap;
+      }
+      @media screen and (max-width: 320px) {
+        font-size: 13px;
+        white-space: nowrap;
+      }
+    }
+    &-calendar {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-align-items: center;
+      align-items: center;
+      height: 74px;
+      &-icon {
+        width: 35px;
+        height: 35px;
+        border: 0.5px solid #C4C4C4;
+        border-radius: 3px;
+        background: url("../../img/calendar.png") no-repeat center center;
+      }
+      &-date {
+        margin-right: 14px;
+      }
+    }
+    &-item {
+      display: -webkit-flex;
+      display: flex;
+      border-top: 1px solid #C7C7C7;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      @media screen and (max-width: 500px) {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-align-items: flex-start;
+        align-items: flex-start;
+      }
+      &-wrapper {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+      }
+      &-time {
+        margin-bottom: 10px;
+      }
+      &-price {
+        font-weight: bold;
+        margin-bottom: 10px;
+        &-currency {
+          font-family: Rouble, sans-serif;
+        }
+      }
+      &-choose {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        width: 129px;
+        height: 50px;
+        border: 2px solid #FC9B09;
+        border-radius: 3px;
+        color: #FC9B09;
+        font-size: 14px;
+        cursor: pointer;
+        @media screen and (max-width: 500px) {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+//Переопределение стилей датапикера
+.react-date-picker__inputGroup, .react-date-picker__clear-button, .react-date-picker__calendar-button__icon {
+   display: none !important;
+ }
+
+.react-date-picker__wrapper {
+  width: 35px;
+  height: 35px;
+  border: 0.5px solid #C4C4C4;
+  border-radius: 3px;
+  background: url("../../img/calendar.png") no-repeat center center;
+}
+
+.react-date-picker__calendar-button {
+
+  width: 100% !important;
+  height: 100% !important;
+}
