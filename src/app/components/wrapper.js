@@ -1,8 +1,9 @@
 import React from 'react';
 import { Header } from './header/header';
 import { MainContent } from './content/main';
-import { Map } from './content/map'
-import Feedback from '../containers/content/feedback'
+import { Map } from './content/map';
+import Feedback from '../containers/content/feedback';
+import { Footer } from '../components/footer/footer';
 
 export const Wrapper = () => {
     return (
@@ -11,6 +12,7 @@ export const Wrapper = () => {
             <MainContent/>
             <Map/>
             <Feedback/>
+            <Footer/>
         </div>
     )
 };

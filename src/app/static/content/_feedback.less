@@ -149,8 +149,39 @@
     line-height: 25px;
     font-weight: bold;
     color: #5286EC;
-    @media screen and (max-width: 320px) {
-      right: 30%;
+    @media screen and (max-width: 768px) {
+      right: 40%;
+    }
+    //@media screen and (max-width: 320px) {
+    //  right: 40%;
+    //}
+    &:before{
+      content: '';
+      position: absolute;
+      width: 11px;
+      height: 6px;
+      background: url("../../img/Arrow.svg") no-repeat;
+      bottom: 8px;
+      left: -20px;
+      transform: rotate(180deg);
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      width: 11px;
+      height: 6px;
+      background: url("../../img/Arrow.svg") no-repeat;
+      bottom: 8px;
+      right: -20px;
+      transform: rotate(180deg);
+    }
+    &_hidden {
+      @media screen and (max-width: 320px) {
+        right: 30%;
+      }
+      &:before, &:after {
+        transform: rotate(0deg);
+      }
     }
   }
 }

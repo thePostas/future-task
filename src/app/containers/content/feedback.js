@@ -16,12 +16,12 @@ export default class Feedback extends Component {
     handleClick(length, event) {
         if (event.target.className === "feedback__button") {
             event.target.className = "feedback__button feedback__button_hidden";
-            event.target.innerHTML = "Скрыть";
-            this.ref.current.className = "feedback__inner";
-        } else {
-            event.target.className = "feedback__button";
             event.target.innerHTML = `Показать все (${length})`;
             this.ref.current.className = "feedback__inner feedback__inner_hidden";
+        } else {
+            event.target.className = "feedback__button";
+            event.target.innerHTML = "Скрыть";
+            this.ref.current.className = "feedback__inner";
         }
     };
 
@@ -45,7 +45,7 @@ export default class Feedback extends Component {
                 <div ref={this.ref} className="feedback__inner feedback__inner_hidden">
                     { feedbacksForRender }
                 </div>
-                <div className="feedback__button" onClick={this.handleClick.bind(this, feedbacksForRender.length)}>
+                <div className="feedback__button feedback__button_hidden" onClick={this.handleClick.bind(this, feedbacksForRender.length)}>
                     {feedbacksForRender.length > 3 ? `Показать все (${feedbacksForRender.length})` : null}
                 </div>
             </section>
