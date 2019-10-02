@@ -1,0 +1,26 @@
+.payments {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
+  &__image {
+    margin-right: 20px;
+  }
+  &_position {
+    flex-grow: 0.4;
+    margin-top: 13px;
+  }
+}
+
+.payments .language {
+  display: none;
+  @media screen and (max-width: 500px) {
+    display: flex;
+  }
+  &_position {
+    margin-left: auto;
+  }
+}

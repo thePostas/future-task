@@ -14,7 +14,7 @@ export default class Language extends Component {
 
     render() {
         return (
-            <div className="language language_hidden">
+            <div className="language language_position language_hidden">
                 <div className="language__option language__option_first">
                     ru
                 </div>
