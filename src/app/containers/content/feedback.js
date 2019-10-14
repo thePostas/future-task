@@ -15,17 +15,15 @@ export default class Feedback extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(length) {
+    handleClick() {
         console.log(this.state);
         if (this.state.isShowed) {
             this.setState({
                 isShowed: false,
-                // buttonText: `Показать все ${this.state.buttonText} (${length})`
             });
         } else {
             this.setState({
                 isShowed: true,
-                // buttonText: "Скрыть"
             });
         }
     };
