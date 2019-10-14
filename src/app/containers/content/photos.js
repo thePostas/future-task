@@ -24,21 +24,23 @@ export default class Photos extends Component {
         super(props);
         this.state = {
             ...props,
-            text: 'Показать все фото'
+            text: 'Показать все фото',
+            isShowed: false
         };
         this.handleClick = this.handleClick.bind(this);
         this.ref = React.createRef();
     }
 
-    handleClick = (event) => {
-        if (this.ref.current.className === 'photos__content photos__content_hidden') {
-            this.ref.current.className = 'photos__content';
-            this.setState({text: 'Скрыть фотографии'});
-            event.target.className = 'photos__show-hide-title photos__show-hide-title_showed';
+    handleClick = () => {
+        if (this.state.isShowed) {
+            this.setState({
+                isShowed: false,
+                text: 'Показать все фото'
+            });
         } else {
-            this.ref.current.className = 'photos__content photos__content_hidden';
-            this.setState({text: 'Показать все фото'});
-            event.target.className = 'photos__show-hide-title';
+            this.setState({
+                isShowed: true,
+                text: 'Скрыть фотографии'});
         }
     };
 
@@ -49,11 +51,15 @@ export default class Photos extends Component {
         return (
             <section className="photos">
                 <h3 className="photos__title">Фотографии пакета:</h3>
-                <div className="photos__content photos__content_hidden" ref={this.ref}>
+                <div className={this.state.isShowed ? "photos__content"
+                    : "photos__content photos__content_hidden"}
+                     ref={this.ref}>
                     { photos }
                 </div>
                 <div className="photos__show-hide">
-                    <span className="photos__show-hide-title" onClick={this.handleClick}>
+                    <span className={this.state.isShowed ? "photos__show-hide-title photos__show-hide-title_showed"
+                        : "photos__show-hide-title"}
+                          onClick={this.handleClick}>
                         { this.state.text }
                     </span>
                 </div>
