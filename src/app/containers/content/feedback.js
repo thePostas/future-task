@@ -8,20 +8,25 @@ export default class Feedback extends Component {
         this.state = {
             ...props,
             feedbacks: json,
+            isShowed: false,
+            buttonText: ""
         };
         this.ref = React.createRef();
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(length, event) {
-        if (event.target.className === "feedback__button") {
-            event.target.className = "feedback__button feedback__button_hidden";
-            event.target.innerHTML = `Показать все (${length})`;
-            this.ref.current.className = "feedback__inner feedback__inner_hidden";
+    handleClick(length) {
+        console.log(this.state);
+        if (this.state.isShowed) {
+            this.setState({
+                isShowed: false,
+                // buttonText: `Показать все ${this.state.buttonText} (${length})`
+            });
         } else {
-            event.target.className = "feedback__button";
-            event.target.innerHTML = "Скрыть";
-            this.ref.current.className = "feedback__inner";
+            this.setState({
+                isShowed: true,
+                // buttonText: "Скрыть"
+            });
         }
     };
 
@@ -42,11 +47,24 @@ export default class Feedback extends Component {
                 <h4 className="feedback__title">
                     Отзывы:
                 </h4>
-                <div ref={this.ref} className="feedback__inner feedback__inner_hidden">
+                <div ref={this.ref} className={this.state.isShowed
+                    ? "feedback__inner"
+                    : "feedback__inner feedback__inner_hidden"
+                }>
                     { feedbacksForRender }
                 </div>
-                <div className="feedback__button feedback__button_hidden" onClick={this.handleClick.bind(this, feedbacksForRender.length)}>
-                    {feedbacksForRender.length > 3 ? `Показать все (${feedbacksForRender.length})` : null}
+                <div className={this.state.isShowed
+                    ? "feedback__button"
+                    : "feedback__button feedback__button_hidden"}
+                     onClick={this.handleClick.bind(this, feedbacksForRender.length)
+                     }>
+                    {
+                        this.state.isShowed
+                            ? "Скрыть"
+                            : `Показать все ${feedbacksForRender.length > 3
+                            ? `(${feedbacksForRender.length})`
+                            : null}`
+                    }
                 </div>
             </section>
         )
